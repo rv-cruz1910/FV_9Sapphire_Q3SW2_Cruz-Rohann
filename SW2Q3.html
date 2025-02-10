@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SW 2</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+             font-family: Arial, sans-serif;
+             background-color: pink;
+             padding: 20px;
+            color: blue;
+            height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+              .container {
+            background-color: #1892f0;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            margin: auto;
+            text-align: center;
+        }
+             .header {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+    </style>
+</head>
+<body>
+    <div class="container">
+    <center>
+    <div class="header">OPERATORS</div>
+    <details ontoggle="message()">
+        <summary> Click here </summary>
+            <i id="Show"></i>
+        </details>
+    <form> 
+<label>Enter 1st Number:</label>
+<input type="text" id="num1" class="form-control">
+<label> Enter 2nd Number:</label>
+<input type="text" id="num2" class="form-control">
+<button type="Submit" class="btn btn-secondary" onmouseover="difference()">
+Subtract</button>
+
+<button type="Submit" class="btn btn-success" onmouseover="quotient()">
+Divide</button>
+
+<button type="Submit" class="btn btn-warning" onmouseover="plus()">
+Add</button>
+
+<button type="Submit" class="btn btn-info" onmouseover="product()">
+Multiply</button>
+
+<button type="Submit" class="btn btn-primary" onmouseover="compareNumbers()">Compare Numbers</button>
+</form>
+
+<script>
+function plus () {
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var sum = Number(num1) + Number(num2);
+    document.write("The sum is: " + sum);
+}
+
+function difference () {
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var difference = Number(num1) - Number(num2);
+    document.write("The difference is: " + difference);
+}
+
+function product () {
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var product = Number(num1) * Number(num2);
+    document.write("The product is: " + product);
+}
+
+function quotient () {
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var quotient = Number(num1) / Number(num2);
+    document.write("The quotient is: " + quotient);
+}
+
+function compareNumbers() {
+var num1 = Number(document.getElementById("num1").value);
+var num2 = Number(document.getElementById("num2").value);
+
+var equal = (num1 === num2 && "Both numbers are equal.") || "The numbers are not equal.";
+var compare = (num1 > num2 && "The first number is greater than the second.") || 
+                  (num1 < num2 && "The first number is less than the second.") || 
+                  "The numbers are equal.";
+var PLUS = (num1 > 0 && num2 > 0 && "Both numbers are positive.") || 
+               "At least one number is zero or negative.";
+var MINUS = (num1 <= 0 || num2 <= 0 && "At least one number is zero or negative.") || 
+                "Both numbers are positive.";
+document.write(equal + "<br>" + compare + "<br>" + PLUS + "<br>" + MINUS);
+}
+
+function message() {
+    document.getElementById("Show").innerHTML = "Enter two numbers and find use the operators.";
+}
+
+function showValue() {
+    var showMe = document.getElementById("show").value;
+    window.alert("The value of the select variable is " + showMe);
+}
+</script>
+</center>
+</div>
+</center>
+</body>
+</html>
